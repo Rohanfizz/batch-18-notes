@@ -1,0 +1,167 @@
+{
+  "main": {
+    "id": "5824b79cf1a32c1d",
+    "type": "split",
+    "children": [
+      {
+        "id": "d0615c6cbd8402d2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "de39146f09603893",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Batch 18 Schedule.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "df8e4a9286ee0ee9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "In depth Schedule.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "a1c85fbccb39249a",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e74b2838a31e113",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7855a2aa062c7699",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "555b3a67c07628a2",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "d068d9a4a599d9d8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f46b649316801bcd",
+    "type": "split",
+    "children": [
+      {
+        "id": "fbf99cb723e845ab",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a6fd20ae43bb32ad",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "In depth Schedule.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "45bbdeab0a7146bd",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "In depth Schedule.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "62f80c4c37c6b92e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "7366bc43f5c10bed",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "In depth Schedule.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "df8e4a9286ee0ee9",
+  "lastOpenFiles": [
+    "Batch 18 Schedule.md",
+    "In depth Schedule.md"
+  ]
+}
