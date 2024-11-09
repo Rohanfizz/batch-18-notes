@@ -1,0 +1,14 @@
+- [Download Intellij Idea Community Edition]([https://www.jetbrains.com/idea/download/other.html](https://www.jetbrains.com/idea/download/other.html))
+- Install
+	- ![[Pasted image 20241109185708.png]]
+- Notes link: https://github.com/Rohanfizz/batch-18-notes/tree/main
+- Create a new project from Intellij
+- Run the Project file
+- ![[Pasted image 20241109190705.png]]
+- If output gets printed, then its fine, otherwise you have to check the sdk version
+- ![[Pasted image 20241109190738.png]] Go to `Project Structure` 
+- Check what sdk version you are useing
+- ![[Pasted image 20241109190823.png]]
+- If `No SDK` is written, then download a new sdk.
+- ![[Pasted image 20241109190949.png]]
+- Select any version >17

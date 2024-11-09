@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "01c3839b2e96e057",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture 1. Intro and Setup.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "In depth Schedule.md",
+                "file": "Lecture 1. Intro and Setup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "In depth Schedule.md",
+                "file": "Lecture 1. Intro and Setup.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "In depth Schedule.md"
+                "file": "Lecture 1. Intro and Setup.md"
               }
             }
           }
@@ -159,9 +171,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "df8e4a9286ee0ee9",
+  "active": "01c3839b2e96e057",
   "lastOpenFiles": [
-    "Batch 18 Schedule.md",
-    "In depth Schedule.md"
+    "Pasted image 20241109190949.png",
+    "Pasted image 20241109190823.png",
+    "Pasted image 20241109190738.png",
+    "Pasted image 20241109190705.png",
+    "Pasted image 20241109190646.png",
+    "Pasted image 20241109185708.png",
+    "In depth Schedule.md",
+    "Lecture 1. Intro and Setup.md",
+    "Batch 18 Schedule.md"
   ]
 }
