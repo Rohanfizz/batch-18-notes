@@ -215,3 +215,119 @@ ___
 - **Variables Window:** View values of variables in scope.
 - **Evaluate Expression:** Allows manual inspection and evaluation of expressions to test assumptions or debug issues. 
 
+# Class code
+```java
+import java.util.*;  
+  
+public class Main {  
+    public static void main(String[] args) {  
+  
+        // datatype variableName = value;  
+//        Integer n = 10;  
+//        System.out.println(n.equals(10));  
+//  
+//        double d = 10.5;  
+//        System.out.println(d);  
+//  
+//        boolean b= true;  
+//        System.out.println(b);  
+//  
+//        char c = 'a';  
+//        System.out.println(c);  
+//  
+//        long longInt = 1000000002 ;  
+//        System.out.println(longInt);  
+  
+  
+//        if(areGoodMarks){  
+//            System.out.println("Very good!");  
+//        }else{  
+//            System.out.println("You need to work hard!");  
+//        }  
+  
+  
+//        String colorOfDress = "Green";  
+//        switch(colorOfDress){  
+//            case "Black":  
+//                System.out.println("Beautiful!");  
+//                break;  
+//            case "Blue":  
+//                System.out.println("Stunning!");  
+//                break;  
+//            case "Green":  
+//                System.out.println("Ew!");  
+//                break;  
+//            default:  
+//                System.out.println("It looks okok");  
+//        }  
+  
+//        int n = 100;  
+//        System.out.println(1);  
+//        System.out.println(2);  
+//        System.out.println(3);  
+//        System.out.println(4);  
+//        System.out.println(5);  
+  
+//        for(int i = 1; i<=n ; i++){  
+//            System.out.println(i);  
+//        }  
+  
+//        int i = 1;  
+//        while(i<=n){  
+//            System.out.println(i);  
+//            i++;  
+//        }  
+  
+//        do {  
+//            System.out.println(i);  
+//            i++;  
+//        } while (i <= n);  
+  
+//        int sum = add(10,20);  
+//        String str = add("Rohan"," Sharma");  
+//        System.out.println(sum);  
+//        System.out.println(str);  
+//        sayHi();  
+  
+        invertedTriangle(10);  
+    }  
+  
+    public static void sayHi() {  
+        System.out.println("Hi!");  
+    }  
+  
+    public static int add(int a, int b) {  
+        return a + b;  
+    }  
+  
+    public static String add(String a, String b) {  
+        return a + b;  
+    }  
+  
+    public static void triangle(int n) {  
+        // n lines  
+        for (int i = 1; i <= n; i++) {  
+            for (int j = 1; j <= i; j++) {  
+                System.out.print("*");  
+            }  
+            System.out.println();  
+        }  
+    }  
+  
+    public static void invertedTriangle(int n) {  
+        for (int i = n; i >= 1; i--) {  
+            int countOfStars = i;  
+            int countOfSpaces = n - i;  
+            //print all spaces  
+            for (int j = 1; j <= countOfSpaces; j++) {  
+                System.out.print(" ");  
+            }  
+            //print all stars  
+            for (int j = 1; j <= countOfStars; j++) {  
+                System.out.print("*");  
+            }  
+            System.out.println();  
+        }  
+    }  
+}
+```
