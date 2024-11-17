@@ -45,7 +45,7 @@
 
 ---
 
-	### **Week 4: Advanced OOP and Code Practice**
+### **Week 4: Advanced OOP and Code Practice**
 
 7. **Session 7: Abstraction and Encapsulation**
    - Concept of interfaces and abstract classes
