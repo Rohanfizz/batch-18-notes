@@ -5,6 +5,9 @@
 - Types:  
   - **1D Arrays**: Linear structure (e.g., `int[] arr = {1, 2, 3};`).  
   - **2D Arrays**: Grid-like structure (e.g., `int[][] matrix = {{1, 2}, {3, 4}};`).  
+  - Arrays can have indexes from 0 to arr.length-1, if you give any other index, it will throw IndexOutOfBounds Exception.
+  - `arr.length` will give you number of elements in the array
+  - n = arr.length, then last index will be on n-1
 
 #### Operations on Arrays in Java:  
 1. **Initialization**  
@@ -223,3 +226,52 @@ public class Main {
 - Implement all the examples above in Java.  
 - Add edge case handling (e.g., empty arrays, single elements).  
 - Research and try advanced problems like "Group Anagrams" and "Rotate a Matrix".  
+
+# Default value of primitive data types
+
+|               |                   |                    |                                                        |
+| ------------- | ----------------- | ------------------ | ------------------------------------------------------ |
+| **Data Type** | **Default Value** | **Default size**   | **Range**                                              |
+| **byte**      | 0                 | 1 byte or 8 bits   | -128 to 127                                            |
+| **short**     | 0                 | 2 bytes or 16 bits | -32,768 to 32,767                                      |
+| **int**       | 0                 | 4 bytes or 32 bits | 2,147,483,648 to 2,147,483,647                         |
+| **long**      | 0                 | 8 bytes or 64 bits | 9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+| **float**     | 0.0f              | 4 bytes or 32 bits | 1.4e-045 to 3.4e+038                                   |
+| **double**    | 0.0d              | 8 bytes or 64 bits | 4.9e-324 to 1.8e+308                                   |
+| **char**      | ‘\u0000’          | 2 bytes or 16 bits | 0 to 65536                                             |
+| **boolean**   | FALSE             | 1 byte or 2 bytes  | 0 or 1                                                 |
+## Class codes
+```java
+  
+public class Main {  
+    public static void main(String[] args) {  
+//        boolean[] arr = new boolean[5]; // Make an array of length 5  
+//        System.out.println(arr[-1]);  
+  
+//        int[] arr = {1, 2, 30, 4, 5};  
+//        int n = arr.length;  
+//  
+//        for (int i = 0; i < n; i++) {  
+//            System.out.println(arr[i]);  
+//        }  
+  
+//        int[][] arr = new int[4][3];  
+//        arr[0][1] = 100;  
+//        System.out.println(arr[0][1]);  
+        int[][] arr = {  
+                {1, 2, 3},  
+                {4, 5, 6},  
+                {7, 8, 9},  
+                {10, 20, 30}  
+        };  
+//        System.out.println(arr[2][2]);  
+        int n = arr.length; // 4  
+        int m = arr[0].length; // 3  
+        for (int i = 0; i < n; i++) {  
+            for (int j = 0; j < m; j++) {  
+                System.out.println(arr[i][j]);  
+            }  
+        }  
+    }  
+}
+```
