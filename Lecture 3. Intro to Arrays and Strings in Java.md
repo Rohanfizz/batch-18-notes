@@ -53,18 +53,24 @@
 - `str.toLowerCase()` / `str.toUpperCase()`: Converts the string to lowercase/uppercase.  
 - `str.substring(start, end)`: Extracts a substring.  
 - `str.charAt(index)`: Returns the character at the specified index.  
-- `str.indexOf(substring)`: Finds the index of a substring.  
+- `str.indexOf(substring)`: Finds the index of a substring (first occurance).  Avoid using this function
 - `str.equals(other)`: Compares strings for equality.  
-- `str.replace(old, new)`: Replaces all occurrences of a substring.  
+- `str.replace(old, new)`: Replaces all occurrences of a substring. Avoid using this function
 
 #### Example: String Reversal  
 ```java
 public class Main {
     public static void main(String[] args) {
-        String str = "hello";
-        String reversed = new StringBuilder(str).reverse().toString();
-        System.out.println(reversed); // Output: "olleh"
+        String ans = reverseString("abcdef");  
+	System.out.println(ans);
     }
+    public static String reverseString(String s) {  
+	    String ans = "";  
+	    for (int i = s.length() - 1; i >= 0; i--) {  
+	        ans = ans + s.charAt(i);  
+	    }  
+	    return ans;  
+	}
 }
 ```
 
@@ -175,7 +181,7 @@ public class Main {
 }
 ```
 
-#### **Spiral Matrix Traversal (2D Array)**  
+#### **Spiral Matrix Traversal (2D Array)**  We can cover this in the end.
 ```java
 public class Main {
     public static void main(String[] args) {
