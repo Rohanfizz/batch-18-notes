@@ -64,7 +64,18 @@
   | **public** | ✔️    | ✔️      | ✔️       | ✔️    |
   | **protected** | ✔️    | ✔️      | ✔️       | ❌    |
   | **private** | ✔️    | ❌      | ❌       | ❌    |
-
+- Public
+	- Data members are accessible from anywhere
+		- Any package
+		- Any class
+		- Universal
+- Private
+	- Data members are only accessible inside the class
+- Default
+	- Data members are accessible only in the same package
+- Protected
+	- They work just fine in the same package
+	- But when the package is different the data member is accessible INSIDE the child class which is present in a different package.
   ```java
   class Person {
       private String name;

@@ -4,81 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d0615c6cbd8402d2",
+        "id": "a2b85f36505d7937",
         "type": "tabs",
         "children": [
           {
-            "id": "de39146f09603893",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Batch 18 Schedule.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Batch 18 Schedule"
-            }
-          },
-          {
-            "id": "df8e4a9286ee0ee9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "In depth Schedule.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "In depth Schedule"
-            }
-          },
-          {
-            "id": "01c3839b2e96e057",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "In depth Schedule.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "In depth Schedule"
-            }
-          },
-          {
-            "id": "6d144ee024f55eb3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture 3. Intro to Arrays and Strings in Java.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lecture 3. Intro to Arrays and Strings in Java"
-            }
-          },
-          {
-            "id": "1dabdd68a73626a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture 4. Introduction to Data Structures in Java.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lecture 4. Introduction to Data Structures in Java"
-            }
-          },
-          {
-            "id": "5de2ee723b48d4d8",
+            "id": "81084d20186101d6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -89,52 +19,9 @@
               },
               "icon": "lucide-file",
               "title": "Lecture 5.  Classes and Objects"
-            }
-          },
-          {
-            "id": "c320b4867cc343f5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture 5.  Classes and Objects.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lecture 5.  Classes and Objects"
-            }
-          },
-          {
-            "id": "c02b9b3a6661738a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture 5.  Classes and Objects.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lecture 5.  Classes and Objects"
-            }
-          },
-          {
-            "id": "5f5ce8a0ea7f0864",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture 2. Intro to Java & Control Statements.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lecture 2. Intro to Java & Control Statements"
             }
           }
-        ],
-        "currentTab": 7
+        ]
       }
     ],
     "direction": "vertical"
@@ -275,22 +162,30 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c02b9b3a6661738a",
+  "active": "81084d20186101d6",
   "lastOpenFiles": [
     "Lecture 6. Inheritance and Polymorphism.md",
     "Lecture 5.  Classes and Objects.md",
+    "Inner classes.md",
+    "Pasted image 20241109185708.png",
+    "@Override Annotation.md",
+    "Static.md",
+    "this keyword.md",
+    "Pasted image 20241121195530.png",
+    "Inheritence.md",
+    "Singleton Class.md",
+    "In depth Schedule.md",
+    "Upcasting or Dynamic method dispatch and Downcasting.md",
+    "Batch 18 Schedule.md",
+    "Lecture 2. Intro to Java & Control Statements.md",
     "Lecture 4. Introduction to Data Structures in Java.md",
     "Lecture 1. Intro and Setup.md",
-    "In depth Schedule.md",
     "Lecture 3. Intro to Arrays and Strings in Java.md",
-    "Lecture 2. Intro to Java & Control Statements.md",
-    "Batch 18 Schedule.md",
     "Pasted image 20241110174840.png",
     "Pasted image 20241109190949.png",
     "Pasted image 20241109190823.png",
     "Pasted image 20241109190738.png",
     "Pasted image 20241109190705.png",
-    "Pasted image 20241109190646.png",
-    "Pasted image 20241109185708.png"
+    "Pasted image 20241109190646.png"
   ]
 }
