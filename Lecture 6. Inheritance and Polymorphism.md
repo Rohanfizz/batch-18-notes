@@ -23,7 +23,7 @@ public static void printSubjects(){
 }
 ```
 - [[Inner classes]]- Static depends on the Scope of where its  written.
-- A nested static member will be static/independent of the initialization of all the nester classes.
+- A nested static member (manufacturer) will be independent of the initialization of all the nester classes.
 ```java
 public class Main {  
     public class Car{  
@@ -42,22 +42,402 @@ public class Main {
 }
 ```
 `manufacturer` is static, not only for Car but also for main.
+### Code till static
+
+```java
+//Main.java
+import pkg2.Human;  
+import java.util.*;  
+  
+public class Main {  
+  
+    public static class Car{  
+        String color;  
+        int mileage;  
+        String manufacturer;  
+  
+        public Car(String color, int mileage,String manufacturer){  
+            this.color = color;  
+            this.mileage = mileage;  
+            this.manufacturer = manufacturer;  
+        }  
+        public void printColor(){  
+            String color = "blue";  
+            System.out.println(this.color);  
+        }  
+        public void compareMilage(Car otherCar){  
+            if(otherCar.mileage > this.mileage){  
+                System.out.println("Other Car is better");  
+            }else{  
+                System.out.print("My car is better");  
+            }  
+        }  
+    }  
+  
+    public static class Animal{  
+        static int population;  
+        String name;    // non static  
+        public static void whatIsYourMood(){  
+//            System.out.println(this.name); // this keyword is not allowed in static context  
+            System.out.println("Happy");  
+            Animal dog = new Animal();  
+            dog.name = "tommy";  
+  
+  
+        }  
+    }  
+  
+    public static void main(String[] args) {  
+        Car myFirstCar = new Car("Red",17,"Suzuki");  
+        Car vinodsCar = new Car("Black",25,"Toyota");  
+        myFirstCar.compareMilage(vinodsCar);  
+        System.out.println(Human.population);  
+        Human h1 = new Human("Jasprit","Female",24);  
+        Human h2 = new Human("Ajit","Male",25);  
+        Human h3 = new Human("Vinod","Male",25);  
+        System.out.println(Human.population);  
+  
+        Animal.whatIsYourMood();  
+    }  
+}
+```
+
+Human.java inside pkg2
+```java
+package pkg2;  
+  
+public class Human {  
+    // static member/methods are not dependent on the initialization of the object of the class.  
+    public static int population = 0;  
+    public String name;  
+    public String gender;  
+    public int age;  
+  
+    public static void printPopulation(){  
+        // I will only be able to use static member  
+        System.out.println(population);  
+    }  
+    public Human(String name,String gender,int age){  
+        this.name = name;  
+        this.gender = gender;  
+        this.age = age;  
+    }  
+  
+}
+```
+
+___
 #### **1. Inheritance**  
 -- A child can extend a parent
 `public class Vehicle {..}` - parent
 `public class Car extends Vehicle{..}` - child
 
 - The car class **extends** vehicle class. this means car class adds to whatever vehicle class is already having.
-- Child class acquire properties of parent class.
+- Child class acquire properties and methods of parent class.
 - Super keyword is used to access the parent class's members/methods from the child class.
 - Every class implicitly extends Object class which provides it with some essential functionalities such as `toString(), hashCode()`
-- Types Of Inheritance
-	1. Singe Level Inheritance
-	2.  Multiple Inheritance - One class extending 2 class ⚠ Not supported in java. We use interfaces instead
-	3. Multi Level Inheritance: Object <- Vehicle <- Car <- SUV
-	4. Hierarchical Inheritance
-	6. Hybrid Inheritance - Mix of multiple and hierarchical.
+- Here's a detailed explanation of different types of inheritance in Java:
+# Types of inheritence
+### 1. **Single Level Inheritance**
+
+- **Definition**: A single class inherits from one parent class.
+- **Example**:
+    
+    ```java
+    class Parent {
+        void display() {
+            System.out.println("This is the Parent class.");
+        }
+    }
+    
+    class Child extends Parent {
+        void show() {
+            System.out.println("This is the Child class.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Child child = new Child();
+            child.display();
+            child.show();
+        }
+    }
+    ```
+    
+- **Output**:
+    
+    ```
+    This is the Parent class.
+    This is the Child class.
+    ```
+    
+
+---
+
+### 2. **Multiple Inheritance** (Not supported in Java with classes)
+
+- **Definition**: A child class inherits from **two or more parent classes**. This is **not directly supported** in Java to avoid the "diamond problem."
+- **Workaround**: Java allows multiple inheritance through **interfaces**.
+- Example we will see in the interfaces class
+
+---
+
+### 3. **Multi-Level Inheritance**
+
+- **Definition**: A class inherits from another class, which itself is inherited from another class (a chain of inheritance).
+- **Example**:
+    
+    ```java
+    class Grandparent {
+        void methodGP() {
+            System.out.println("This is the Grandparent class.");
+        }
+    }
+    
+    class Parent extends Grandparent {
+        void methodP() {
+            System.out.println("This is the Parent class.");
+        }
+    }
+    
+    class Child extends Parent {
+        void methodC() {
+            System.out.println("This is the Child class.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Child child = new Child();
+            child.methodGP();
+            child.methodP();
+            child.methodC();
+        }
+    }
+    ```
+    
+- **Output**:
+    
+    ```
+    This is the Grandparent class.
+    This is the Parent class.
+    This is the Child class.
+    ```
+    
+
+---
+
+### 4. **Hierarchical Inheritance**
+
+- **Definition**: Multiple child classes inherit from the same parent class.
+- **Example**:
+    
+    ```java
+    class Parent {
+        void parentMethod() {
+            System.out.println("This is the Parent class.");
+        }
+    }
+    
+    class Child1 extends Parent {
+        void child1Method() {
+            System.out.println("This is Child1 class.");
+        }
+    }
+    
+    class Child2 extends Parent {
+        void child2Method() {
+            System.out.println("This is Child2 class.");
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            Child1 child1 = new Child1();
+            Child2 child2 = new Child2();
+    
+            child1.parentMethod();
+            child1.child1Method();
+    
+            child2.parentMethod();
+            child2.child2Method();
+        }
+    }
+    ```
+    
+- **Output**:
+    
+    ```
+    This is the Parent class.
+    This is Child1 class.
+    This is the Parent class.
+    This is Child2 class.
+    ```
+    
+
+---
+
+### 5. **Hybrid Inheritance**
+
+- **Definition**: A mix of two or more types of inheritance (e.g., hierarchical + multiple). **Java does not support hybrid inheritance** directly with classes because of the "diamond problem," but it can be implemented using **interfaces**.
+- Example we will see in the interfaces class
+---
+
+### Key Points:
+
+1. **Single, Multi-Level, and Hierarchical inheritance** are directly supported in Java.
+2. **Multiple and Hybrid inheritance** with classes is not supported due to ambiguity issues but can be implemented using **interfaces**.
 	7. ![[Pasted image 20241121195530.png]]
+
+Code till inheritance
+Vehicle.java
+```java
+package pkg;  
+  
+public class Vehicle{  
+    public String fuelType;  
+    private String manufacturer;  
+    private int number;  
+    private int model;  
+  
+    public Vehicle(String fuelType, String manufacturer, int number, int model) {  
+        this.fuelType = fuelType;  
+        this.manufacturer = manufacturer;  
+        this.number = number;  
+        this.model = model;  
+    }  
+  
+    public String getFuelType() {  
+        return this.fuelType;  
+    }  
+  
+    public void setFuelType(String fuelType) {  
+        this.fuelType = fuelType;  
+    }  
+  
+    public String getManufacturer() {  
+        return manufacturer;  
+    }  
+  
+    public void setManufacturer(String manufacturer) {  
+        this.manufacturer = manufacturer;  
+    }  
+  
+    public int getNumber() {  
+        return number;  
+    }  
+  
+    public void setNumber(int number) {  
+        this.number = number;  
+    }  
+  
+    public int getModel() {  
+        return model;  
+    }  
+  
+    public void setModel(int model) {  
+        this.model = model;  
+    }  
+}
+```
+Car.java
+```java
+package pkg;  
+  
+public class Car extends Vehicle {  
+    private int seatCapacity;  
+    private int bootCapacity;  
+    private int torque;  
+    private int hp;  
+  
+    public Car(String fuelType, String manufacturer, int number, int model, int seatCapacity, int bootCapacity, int torque, int hp){  
+        super(fuelType,manufacturer,number,model);  
+        this.seatCapacity = seatCapacity;  
+        this.bootCapacity = bootCapacity;  
+        this.torque = torque;  
+        this.hp = hp;  
+    }  
+  
+    public int getSeatCapacity() {  
+        return seatCapacity;  
+    }  
+  
+    public void setSeatCapacity(int seatCapacity) {  
+        this.seatCapacity = seatCapacity;  
+    }  
+  
+    public int getBootCapacity() {  
+        return bootCapacity;  
+    }  
+  
+    public void setBootCapacity(int bootCapacity) {  
+        this.bootCapacity = bootCapacity;  
+    }  
+  
+    public int getTorque() {  
+        return torque;  
+    }  
+  
+    public void setTorque(int torque) {  
+        this.torque = torque;  
+    }  
+  
+    public int getHp() {  
+        return hp;  
+    }  
+  
+    public void setHp(int hp) {  
+        this.hp = hp;  
+    }  
+}
+```
+
+Bike.java
+```java
+package pkg;  
+  
+public class Bike extends Vehicle{  
+    private int cc;  
+    private boolean areDiskBrakesPresent;  
+  
+    public Bike(String fuelType,String manufacturer,int number,int model, int cc, boolean areDiskBrakesPresent){  
+        super(fuelType,manufacturer,number,model);  
+        this.cc = cc;  
+        this.areDiskBrakesPresent = areDiskBrakesPresent;  
+    }  
+  
+    public int getCc() {  
+        return cc;  
+    }  
+  
+    public void setCc(int cc) {  
+        this.cc = cc;  
+    }  
+  
+    public boolean isAreDiskBrakesPresent() {  
+        return areDiskBrakesPresent;  
+    }  
+  
+    public void setAreDiskBrakesPresent(boolean areDiskBrakesPresent) {  
+        this.areDiskBrakesPresent = areDiskBrakesPresent;  
+    }  
+}
+```
+Main.java
+```java
+import pkg.Bike;  
+  
+public class Main {  
+    public static void main(String[] args) {  
+        Bike myBike = new Bike("Petrol", "Honda", 1231, 1234, 160, true);  
+        System.out.println(myBike.getCc());  
+        System.out.println(myBike.getFuelType());  
+        System.out.println(myBike.toString());  
+    }  
+}
+```
+___
 ## The "super" keyword
 Super is used to access parent class methods and attributes from the child class's scope.
 
@@ -166,3 +546,40 @@ public final void sayHello(){
       }
   }
   ``` 
+
+
+## Class Codes
+- Used to explain this keyword
+```java
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or  
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.  
+public class Main {  
+    public static class Car{  
+        String color;  
+        int mileage;  
+        String manufacturer;  
+  
+        public Car(String color, int mileage,String manufacturer){  
+            this.color = color;  
+            this.mileage = mileage;  
+            this.manufacturer = manufacturer;  
+        }  
+        public void printColor(){  
+            String color = "blue";  
+            System.out.println(this.color);  
+        }  
+        public void compareMilage(Car otherCar){  
+            if(otherCar.mileage > this.mileage){  
+                System.out.println("Other Car is better");  
+            }else{  
+                System.out.print("My car is better");  
+            }  
+        }  
+    }  
+    public static void main(String[] args) {  
+        Car myFirstCar = new Car("Red",17,"Suzuki");  
+        Car vinodsCar = new Car("Black",25,"Toyota");  
+        myFirstCar.compareMilage(vinodsCar);  
+    }  
+}
+```

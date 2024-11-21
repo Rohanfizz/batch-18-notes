@@ -1,3 +1,6 @@
+Main is non-static
+Car is static;
+this means, I will be able to access the car class even without defining the main class
 ```java
 public class Main {  
     public static class Car{  
