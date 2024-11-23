@@ -1,3 +1,8 @@
+## 4 Pillars of OOPs
+1. Inheritence
+2. Polymorphism
+3. Abstraction
+4. Encapsulation
 ## "this" Keyword
 - "this" is a **reference variable** that refers to the current object.
 - Can only be used in non-static context.
@@ -461,7 +466,49 @@ Student rohan = new Student("Rohan",10,30);
 vrinda = rohan; //this is not allowed
 ```
 - Non final objects can point to final objects
+- // TODO If a class is final what will happen? `public final class User`
+
+Codes of final keyword
+User.java
+```java
+public final class User {  
+    public String name;  
+    public int bankAccountNumber;  
+    public int balance;  
+    public User(String name, int bankAccountNumber, int balance) {  
+        this.name = name;  
+        this.bankAccountNumber = bankAccountNumber;  
+        this.balance = balance;  
+    }  
+    public String getName(){  
+        return this.name;  
+    }  
+  
+    public int getBankAccountNumber(){  
+        return this.bankAccountNumber;  
+    }  
+    public int getBalance(){  
+        return this.balance;  
+    }  
+}
+```
+
+Main.java
+```java
+public class Main{  
+    public static void main(String[] args) {  
+        final User user1 = new User("Rohan",123123,100000);  
+        User user2 = new User("Bhushan",123124,100000);  
+        user2 = user1;  
+        user2 = new User("Bhushan",123124,100000);  
+        user1.balance = 10;  
+    }  
+}
+```
 #### **2. Polymorphism**  
+=> Poly - many
+=> morph - change shape
+// TODO Simple definition to be added.
 - **Compile-time Polymorphism**: Achieved via method overloading.  
 - **Run-time Polymorphism**: Achieved via method overriding (dynamic method dispatch).  
   ```java
@@ -511,8 +558,8 @@ vrinda = rohan; //this is not allowed
 - [[Upcasting or Dynamic method dispatch and Downcasting]]
 - You cannot override **final** methods
 	- I don't want any tampering
-	- Enhance compiler performance  for early binding, compiler during the compile time will decide that a final method will look same for every child.
-```
+	- Enhance compiler performance for early binding, compiler during the compile time will decide that a final method will look same for every child.
+```java
 public final void sayHello(){  
     System.out.println("Hello from the parent class");  
 }
@@ -533,20 +580,111 @@ public final void sayHello(){
   }
   ```
 
+Polymorph codes
+Main.java
+```java
+import java.util.ArrayList;  
+  
+public class Main {  
+    public static void main(String[] args) {  
+//        Car myCar = new Car(100000,20,5,123,"Tata","Petrol"); // No args constructor  
+//        myCar.printCarDetails();  
+        Lion.whereAreTheAnimals();  
+        Lion simba = new Lion("Simba");  
+        simba.sayHi();  
+  
+        Dog tommy = new Dog("Tommy");  
+        tommy.sayHi();  
+        ArrayList<Integer> arr = new ArrayList<>();  
+        arr.add(10);  
+        System.out.println(arr);  
+    }  
+}
+```
+Animal.java
+```java
+public class Animal {  
+    String name;  
+  
+    public Animal(String name) {  
+        this.name = name;  
+    }  
+  
+    public void sayHi() {  
+        System.out.println("Hello! I'm an animal my name is " + this.name + "!");  
+    }  
+    public static void whereAreTheAnimals(){  
+        System.out.println("Zoo!");  
+    }  
+}
+```
+
+Dog.java
+```java
+public class Dog extends Animal {  
+    public Dog(String name){  
+        super(name);  
+    }  
+}
+```
+Lion.java
+```java
+public class Lion extends Animal {  
+    public Lion(String name){  
+        super(name);  
+    }  
+  
+    @Override  
+    public void sayHi(){  
+        System.out.println("Roaar!!");  
+    }  
+  
+}
+```
+
+Car.java
+```java
+public class Car {  
+    int price;  
+    int mileage;  
+    int seatingCap;  
+    int modelNumber;  
+    String manufacturer;  
+    String fuelType;  
+  
+    public Car(int price, int mileage, int seatingCap, int modelNumber, String manufacturer, String fuelType) {  
+        this.price = price;  
+        this.mileage = mileage;  
+        this.fuelType = fuelType;  
+        this.seatingCap = seatingCap;  
+        this.modelNumber = modelNumber;  
+        this.manufacturer = manufacturer;  
+    }  
+    public Car(){  
+  
+    }  
+    public Car(int mileage){  
+        this.mileage = mileage;  
+    }  
+  
+    public void printCarDetails(){  
+        System.out.println(this.price);  
+        System.out.println(this.mileage);  
+        System.out.println(this.seatingCap);  
+        System.out.println(this.modelNumber);  
+        System.out.println(this.manufacturer);  
+        System.out.println(this.fuelType);  
+    }  
+  
+    public void printCarDetails(String destination){    // same function name, same return type  
+        // But different number of parameters, hence polymorphism  
+    }  
+  
+}
+```
 #### **5. Other OOP Concepts**  
-- **Abstraction**: Hiding implementation details and showing only functionality.  
-  ```java
-  abstract class Shape {
-      abstract void draw();
-  }
-
-  class Circle extends Shape {
-      void draw() {
-          System.out.println("Drawing Circle");
-      }
-  }
-  ``` 
-
+- **Abstraction**: - Hiding unnecessary details and showing the valuable  information.
+- We don't care about HOW, we just care about WHAT
 
 ## Class Codes
 - Used to explain this keyword

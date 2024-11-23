@@ -27,6 +27,8 @@
 - Special method used to initialize objects. Always Same name as the class.  
 - Why do we not write return type in constructors? Constructors by default return the "Class" type.
 - What is the use of `new` keyword? It tells java that a constructor is getting called, and a new object of the class should be returned.
+- If you provide no constructors to the class, Java provides a noArgs constructor
+- But as soon as you provide a constructor java will take away the no args constructor
   ```java
   class Car {
       String color;
