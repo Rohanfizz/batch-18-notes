@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture 6. Inheritance and Polymorphism.md",
+                "file": "Lecture 7. Interfaces, Abstract Classes, Template Classes, Singleton Class, Upcasting, and Downcasting.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 6. Inheritance and Polymorphism"
+              "title": "Lecture 7. Interfaces, Abstract Classes, Template Classes, Singleton Class, Upcasting, and Downcasting"
             }
           },
           {
@@ -178,8 +178,9 @@
   },
   "active": "d1ecd20efa7377a0",
   "lastOpenFiles": [
-    "Lecture 7. Interfaces, Abstract Classes, Template Classes, Singleton Class, Upcasting, and Downcasting.md",
     "Lecture 6. Inheritance and Polymorphism.md",
+    "Upcasting or Dynamic method dispatch and Downcasting.md",
+    "Lecture 7. Interfaces, Abstract Classes, Template Classes, Singleton Class, Upcasting, and Downcasting.md",
     "@Override Annotation.md",
     "Lecture 5.  Classes and Objects.md",
     "Java Collections Framework.md",
@@ -191,7 +192,6 @@
     "Inheritence.md",
     "Singleton Class.md",
     "In depth Schedule.md",
-    "Upcasting or Dynamic method dispatch and Downcasting.md",
     "Batch 18 Schedule.md",
     "Lecture 2. Intro to Java & Control Statements.md",
     "Lecture 4. Introduction to Data Structures in Java.md",
