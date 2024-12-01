@@ -34,63 +34,6 @@ Spring Boot simplifies the development of Java applications by providing default
 - **POM** stands for **Project Object Model**.
 - It is an XML file that contains configuration information for Maven projects.
 - It manages project dependencies, build configurations, and plugins.
-
-#### **Key Sections of `pom.xml`:**
-
-1. **Project Metadata**
-    - Includes the project name, version, description, and packaging type.
-2. **Dependencies**
-    - Lists libraries and frameworks needed for the project.
-3. **Plugins**
-    - Defines additional functionalities like code compilation and packaging.
-
-#### **Example `pom.xml` for a Spring Boot Application**
-
-```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>spring-boot-example</artifactId>
-    <version>1.0.0</version>
-    <packaging>jar</packaging>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.0</version>
-    </parent>
-
-    <dependencies>
-        <!-- Spring Boot Starter for Web Applications -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <!-- H2 Database -->
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- Spring Data JPA -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <!-- Testing -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-</project>
-```
-
 ---
 ## Application properties file
 
@@ -139,229 +82,172 @@ logging.file.name=application.log
 1. **Custom Application Properties:**
     
     ```properties
-    app.name=MySpringApp
-    app.version=1.0.0
-    ```
+app.name=MySpringApp
+app.version=1.0.0
+```
     
 5. **Enable/Disable Features:**
     
-    ```properties
-    spring.h2.console.enabled=true
-    ```
-    
-
----
-
-### **Example of `application.properties`**
-
 ```properties
-# Server Configuration
-server.port=9090
-server.servlet.context-path=/myapp
-
-# H2 Database Configuration
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driver-class-name=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=
-
-# Hibernate (JPA) Settings
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-
-# Custom Application Properties
-app.name=Spring Boot Demo
-app.environment=development
-```
-
----
-
-### **Tips for Managing `application.properties`**
-
-1. **Use Profiles for Environment-Specific Configurations:**
-    
-    - Use files like `application-dev.properties` and `application-prod.properties` for different environments.
-    - Activate profiles using:
-        
-        ```properties
-        spring.profiles.active=dev
-        ```
-        
-2. **Secure Sensitive Information:**
-    
-    - Avoid hardcoding sensitive data like passwords; use environment variables instead.
-3. **Default Properties:**
-    
-    - If `application.properties` is not found, Spring Boot uses default settings.
-
----
-
-This file provides a foundation for flexible and efficient application configuration, allowing developers to focus on coding without worrying about hardcoded settings.
-```
-
-
-### **3. Dependency Injection in Spring**
-
-#### **What is Dependency Injection?**
-
-- A **design pattern** where a class's dependencies are provided (injected) by an external system, rather than being created within the class.
-- Promotes loose coupling and easier testing.
-
-#### **Example of Dependency Injection**
-
-1. **Payment DAO Layer**
-    - **Interface:** `PaymentDao`
-    - **Implementation:** `PaymentDaoImpl`
-    - Annotated with `@Repository` to indicate it's a Spring-managed bean.
-2. **Service Layer**
-    
-    - **Interface:** `PaymentService`
-    - **Implementation:** `PaymentServiceImpl`
-    - Injects `PaymentDao` using `@Autowired`.
-    - Annotated with `@Service`.
-3. **Unit Test for Dependency Injection**
-    
-    ```java
-    @SpringBootTest
-    public class PaymentServiceTest {
-    
-        @Autowired
-        private PaymentService paymentService;
-    
-        @Test
-        public void testPaymentProcessing() {
-            String result = paymentService.processPayment(100.0);
-            assertEquals("Payment of 100.0 processed", result);
-        }
-    }
-    ```
-    
-
-#### **Code Structure**
-
-**`PaymentDao`**
-
-```java
-public interface PaymentDao {
-    void savePayment(double amount);
-}
-```
-
-**`PaymentDaoImpl`**
-
-```java
-@Repository
-public class PaymentDaoImpl implements PaymentDao {
-    @Override
-    public void savePayment(double amount) {
-        System.out.println("Payment of " + amount + " saved to the database.");
-    }
-}
-```
-
-**`PaymentService`**
-
-```java
-public interface PaymentService {
-    String processPayment(double amount);
-}
-```
-
-**`PaymentServiceImpl`**
-
-```java
-@Service
-public class PaymentServiceImpl implements PaymentService {
-
-    @Autowired
-    private PaymentDao paymentDao;
-
-    @Override
-    public String processPayment(double amount) {
-        paymentDao.savePayment(amount);
-        return "Payment of " + amount + " processed";
-    }
-}
-```
-
----
-
-### **4. Using Spring Boot with H2 Database**
-
-#### **What is H2 Database?**
-
-- H2 is an in-memory database often used for development and testing.
-- Fast, lightweight, and doesn't require installation.
-
-#### **Steps to Integrate H2 in Spring Boot:**
-
-1. **Add H2 Dependency in `pom.xml`:**
-    
-    ```xml
-    <dependency>
-        <groupId>com.h2database</groupId>
-        <artifactId>h2</artifactId>
-        <scope>runtime</scope>
-    </dependency>
-    ```
-    
-2. **Configure `application.properties`:**
-    
-```properties
-spring.datasource.url=jdbc:h2:mem:testdb
-spring.datasource.driverClassName=org.h2.Driver
-spring.datasource.username=sa
-spring.datasource.password=password
 spring.h2.console.enabled=true
 ```
-1. **Entity Class Example:**
     
-    ```java
-    @Entity
-    public class Payment {
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-    
-        private double amount;
-    
-        // Getters and Setters
-    }
-    ```
-    
-4. **Repository Example:**
-    
-    ```java
-    @Repository
-    public interface PaymentRepository extends JpaRepository<Payment, Long> {
-    }
-    ```
-    
-5. **Testing the Integration:**
-    
-    ```java
-    @SpringBootTest
-    public class PaymentRepositoryTest {
-    
-        @Autowired
-        private PaymentRepository paymentRepository;
-    
-        @Test
-        public void testSavePayment() {
-            Payment payment = new Payment();
-            payment.setAmount(200.0);
-            paymentRepository.save(payment);
-    
-            assertNotNull(payment.getId());
-        }
-    }
-    ```
-    
-
 ---
+Before we start with activities, make sure your VsCode is ready with nesseary extensions:
+1. Java Code Generators
+2. Extension Pack For Java
+3. Spring Boot Extension Pack
+# Activity 1: Spring Data JPA + H2
 
-### **Homework
+1. Create a project with following dependencies:
+	1. H2
+	2. Data JPA
+2. Create the Entity Class Student and add getters and setters.
+```java
+@Entity
+public class Student {
+ @Id
+  private int id;
+  private String name;
+  private int testScore;
+}
+```
+3. Create Repository Interface.
+```java
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Integer> {}
+```
+4. Create Unit Test to test the application.
+```java
+@Autowired
+private StudentRepository repo;
 
-1. Set up a basic Spring Boot project with `pom.xml`.
-2. Create the `PaymentDao`, `PaymentService`, and integrate them into a Spring Boot application.
-3. Configure H2 and create a sample table for payments. Implement a CRUD operation.
+@Test
+void contextLoads() {
+	Student input = new Student();
+	input.setName("Rohan");
+	input.setTestScore(123);
+	input.setId(2);
+	
+	repo.save(input);
+	Student output = repo.findById(2).get();
+	assertNotNull(output);
+}
+```
+## Learnings
+
+- #### Annotations
+    - **@Entity**: Marks the class as a JPA entity, mapping it to a database table.
+    - **@Id**: Declares the primary key of the entity.
+    - **@Repository**: Indicates the interface is a Spring Data repository, providing database interaction capabilities.
+    - **@Autowired**: Enables dependency injection to inject required beans automatically.
+    - **@Test**: Marks a method as a test case in the JUnit framework.
+    - **@SpringBootTest**: Loads the full Spring application context for integration testing.
+- #### Repository Methods
+    - **`save(S entity)`**: Saves the given entity to the database.
+    - **`findById(ID id)`**: Retrieves an entity by its primary key (returns an `Optional`).
+    - **`findAll()`**: Returns all entities in the database as a list.
+    - **`deleteById(ID id)`**: Deletes an entity by its primary key.
+    - **`existsById(ID id)`**: Checks whether an entity exists with the given primary key.
+    - **`count()`**: Returns the total number of entities in the database.
+- #### Other Learnings
+    - **Dependency Management**: Using Maven or Gradle to manage Spring Boot dependencies like H2 and Data JPA.
+    - **H2 Database**: Hands-on experience with an in-memory database for testing.
+    - **JPA Basics**: Understanding how entity classes and repositories simplify database interactions.
+    - **CRUD Operations**: Gaining practical knowledge of Create, Read, Update, Delete operations.
+    - **Testing with JUnit**: Writing robust tests to validate application functionality.
+    - **Assertions**: Using `assertNotNull`, `assertEquals`, and other assertions to verify test results.
+    - **Optional Handling**: Understanding how `Optional` can help handle null values safely.
+    - **Rapid Prototyping**: Leveraging Spring Boot and H2 to build and test applications quickly.
+    - **Spring Boot Layers**: Understanding how entities, repositories, and tests fit into a Spring Boot application's architecture.
+___
+# Activity 2: CRUD Rest API with MySQL DB
+1. Create a connection with sql in mysql workbench.
+2. Create DB and table in mysql using workbench
+```mysql
+create database mydb;
+use mydb;
+
+create table product (
+id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name varchar(20),
+description varchar(20),
+price int
+);
+
+select * from product;
+```
+3. Create project using following dependencies
+	1. MySql Driver
+	2. JPA
+	3. Web 
+4. Create product model ( generate getters and setters for the model)
+```java
+@Entity
+public class Product {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private int id;
+  private String name;
+  private String description;
+  private int price;
+}
+```
+5. Create a repository for Product model so that db interactions can be made
+```java
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Integer> {}
+```
+6. Create the Controller
+> A **Controller** in a backend application is like a traffic cop for your app. Its job is to handle the requests that come from users (or their `browsers/apps`) and send back the appropriate responses.
+```java
+@RestController
+public class ProductRestController {
+  
+  @Autowired
+  ProductRepository repo;
+  
+  @RequestMapping(value = "/products/", method = RequestMethod.GET)
+  public List<Product> getProduct() {
+    return repo.findAll();
+  }
+  
+  @RequestMapping(value = "/products/{id}", method = RequestMethod.GET)
+  public Product getProductById(@PathVariable("id") int id) {
+    return repo.findById(id).get();
+  }
+}
+```
+7. Configure the Data source. Note, DB username and DB password will be the one you configured while installing mysql.
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/mydb
+spring.datasource.username=root
+spring.datasource.password=rootroot
+```
+8. Implement other CRUD operations
+## Learnings
+
+### CRUD Rest API with MySQL DB
+- **Setting Up MySQL**:
+    - How to create a database and table in MySQL using MySQL Workbench.
+    - Writing basic SQL commands like `CREATE DATABASE`, `CREATE TABLE`, and `SELECT`.
+- **Database Integration**:
+    - Understanding how to connect a Spring Boot application to MySQL using the `spring.datasource` configuration.
+    - Using MySQL Driver dependency to enable communication between the application and the database.
+- **JPA Model Features**:
+    - **Auto-Generated IDs**: Use of `@GeneratedValue` with `GenerationType.IDENTITY` to let the database handle ID generation for each record.
+- **Controller Basics**:
+    - Understanding the role of a REST Controller in handling HTTP requests and sending responses.
+    - Use of `@RestController` and `@RequestMapping` to map URL paths to Java methods.
+    - Returning a list of objects (e.g., products) directly from the database using `findAll()`.
+- **Repository Capabilities**:
+    - Using JPA repository methods like `findAll()` to fetch all records from a table.
+    - Extending the repository to handle CRUD operations (`save`, `findById`, `deleteById`, etc.).
+- **Spring Boot Features**:
+    - Configuring the application properties file for externalizing database credentials and URLs.
+    - Leveraging the **Spring Boot Web** dependency to expose REST APIs.
+- **Other Learnings**:
+    - **CRUD Operations**: Creating, Reading, Updating, and Deleting records in the database through REST APIs.
+    - **JSON Representation**: How Java objects are automatically converted to JSON when returned from a REST controller.
+    - **Best Practices**: Keeping the controller focused on handling requests and delegating database interactions to the repository layer.
+    - **API Testing**: Testing APIs using tools like Postman or browser extensions to verify endpoint functionality.

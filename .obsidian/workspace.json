@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "In depth Schedule.md",
+                "file": "Lecture 9. Spring Boot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "In depth Schedule"
+              "title": "Lecture 9. Spring Boot"
             }
           },
           {
@@ -207,10 +207,10 @@
   },
   "active": "a0db92be6bacf818",
   "lastOpenFiles": [
+    "In depth Schedule.md",
     "Lecture 9. Spring Boot.md",
     "Lecture 8. Introduction to Backend Development Concepts.md",
     "Lecture 7. Interfaces, Abstract Classes, Template Classes, Singleton Class, Upcasting, and Downcasting.md",
-    "In depth Schedule.md",
     "Batch 18 Schedule.md",
     "Lecture 6. Inheritance and Polymorphism.md",
     "Upcasting or Dynamic method dispatch and Downcasting.md",
