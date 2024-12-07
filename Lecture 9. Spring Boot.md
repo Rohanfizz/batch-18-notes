@@ -94,7 +94,7 @@ spring.h2.console.enabled=true
     
 ---
 Before we start with activities, make sure your VsCode is ready with nesseary extensions:
-1. Java Code Generators
+1. Java Code Generators(Updated Equals)
 2. Extension Pack For Java
 3. Spring Boot Extension Pack
 # Activity 1: Spring Data JPA + H2
@@ -119,19 +119,77 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {}
 ```
 4. Create Unit Test to test the application.
 ```java
-@Autowired
-private StudentRepository repo;
+@SpringBootTest
+class JpaprojectApplicationTests {
+  
+  @Autowired
+  StudentRepository repo;
+  
+  @Test
+  void testCreateStudent() {
+    Student rohan = new Student();
+    rohan.setName("Rohan");
+    rohan.setId(1);
+    rohan.setTestScore(90);
+  
+   repo.save(rohan);
 
-@Test
-void contextLoads() {
-	Student input = new Student();
-	input.setName("Rohan");
-	input.setTestScore(123);
-	input.setId(2);
-	
-	repo.save(input);
-	Student output = repo.findById(2).get();
-	assertNotNull(output);
+  
+    Student output = repo.findById(2).get();
+    assertNotNull(output);
+  }
+  
+  @Test
+  void testReadStudent() {
+    Student student1 = new Student(1, "Virendra", 99);
+    Student student2 = new Student(2, "Vaishali", 95);
+    Student student3 = new Student(3, "Sravani", 97);
+  
+    repo.save(student1);
+    repo.save(student2);
+    repo.save(student3);
+  
+    // read
+    List<Student> allStudents = repo.findAll();
+    assertNotNull(allStudents);
+    assertEquals(3, allStudents.size());
+  }
+  
+  @Test
+  void testUpdateStudent() {
+    Student student1 = new Student(1, "Virendra", 99);
+    repo.save(student1);
+  
+    Student output1 = repo.findById(1).get();
+    output1.setTestScore(100);
+    repo.save(output1);
+  
+    List<Student> allStudents = repo.findAll();
+    assertNotNull(allStudents);
+    assertEquals(1, allStudents.size());
+  }
+  
+  @Test
+  void testDeleteStudent() {
+    Student student1 = new Student(1, "Virendra", 99)
+
+    Student student2 = new Student(2, "Vaishali", 95);
+    Student student3 = new Student(3, "Sravani", 97);
+  
+    repo.save(student1);
+    repo.save(student2);
+    repo.save(student3);
+  
+    // read
+    List<Student> allStudents = repo.findAll();
+    assertEquals(3, allStudents.size());
+  
+    repo.deleteById(1);
+  
+    allStudents = repo.findAll();
+    assertNotNull(allStudents);
+    assertEquals(2, allStudents.size());
+  }
 }
 ```
 ## Learnings

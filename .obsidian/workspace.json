@@ -41,12 +41,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture 9. Spring Boot.md",
+                "file": "Batch 18 Schedule.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 9. Spring Boot"
+              "title": "Batch 18 Schedule"
+            }
+          },
+          {
+            "id": "0c4f245c200e21d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture 11. Spring Security JWT Tokens and Authentication Authorization Architecture.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture 11. Spring Security JWT Tokens and Authentication Authorization Architecture"
             }
           },
           {
@@ -64,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -120,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "f46b649316801bcd",
@@ -205,13 +220,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a0db92be6bacf818",
+  "active": "0c4f245c200e21d5",
   "lastOpenFiles": [
+    "Pasted image 20241207181219.png",
+    "Batch 18 Schedule.md",
+    "Lecture 11. Spring Security JWT Tokens and Authentication Authorization Architecture.md",
     "In depth Schedule.md",
     "Lecture 9. Spring Boot.md",
     "Lecture 8. Introduction to Backend Development Concepts.md",
     "Lecture 7. Interfaces, Abstract Classes, Template Classes, Singleton Class, Upcasting, and Downcasting.md",
-    "Batch 18 Schedule.md",
     "Lecture 6. Inheritance and Polymorphism.md",
     "Upcasting or Dynamic method dispatch and Downcasting.md",
     "@Override Annotation.md",
