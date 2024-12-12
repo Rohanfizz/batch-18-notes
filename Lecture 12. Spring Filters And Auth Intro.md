@@ -85,3 +85,5 @@ public class AuthFilter extends OncePerRequestFilter {
     - Filter checks the token:
         - If valid: Proceed to the controller.
         - If invalid: Respond with `401 Unauthorized`.
+
+![[Untitled Diagram.drawio.svg]]
