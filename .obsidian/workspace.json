@@ -64,6 +64,20 @@
             }
           },
           {
+            "id": "cace5e53f2ec5357",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture 12. Spring Filters And Auth Intro.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture 12. Spring Filters And Auth Intro"
+            }
+          },
+          {
             "id": "23d6b01b5e2a5665",
             "type": "leaf",
             "state": {
@@ -78,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -134,8 +148,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "f46b649316801bcd",
@@ -220,11 +233,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0c4f245c200e21d5",
+  "active": "cace5e53f2ec5357",
   "lastOpenFiles": [
+    "Lecture 11. Spring Security JWT Tokens and Authentication Authorization Architecture.md",
+    "Lecture 12. Spring Filters And Auth Intro.md",
     "Pasted image 20241207181219.png",
     "Batch 18 Schedule.md",
-    "Lecture 11. Spring Security JWT Tokens and Authentication Authorization Architecture.md",
     "In depth Schedule.md",
     "Lecture 9. Spring Boot.md",
     "Lecture 8. Introduction to Backend Development Concepts.md",
